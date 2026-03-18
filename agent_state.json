@@ -1,6 +1,7 @@
 {
-  "step": 1,
+  "step": 2,
   "completed": [
-    "write_agent_logic"
+    "write_agent_logic",
+    "write_demo_script"
   ]
 }

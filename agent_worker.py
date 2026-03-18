@@ -84,12 +84,15 @@ def git_push(message):
     """Пушим прогресс в GitHub"""
     try:
         os.chdir(Path(__file__).parent)
+        token = os.environ.get('GITHUB_TOKEN', '')
+        if token:
+            subprocess.run(['git', 'remote', 'set-url', 'origin', f'https://hellozadrz:{token}@github.com/hellozadrz/synthesis-hackaton.git'], capture_output=True)
         subprocess.run(['git', 'add', '-A'], capture_output=True)
         result = subprocess.run(['git', 'commit', '-m', message], capture_output=True, text=True)
         if 'nothing to commit' in result.stdout:
             log("📦 Git: nothing new to commit")
             return
-        push = subprocess.run(['git', 'push'], capture_output=True, text=True)
+        push = subprocess.run(['git', 'push', 'origin', 'main'], capture_output=True, text=True)
         if push.returncode == 0:
             log(f"✅ Git pushed: {message}")
         else:

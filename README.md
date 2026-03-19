@@ -35,3 +35,30 @@ Today agents move money through centralized APIs that can block, reverse, or sur
 
 - **Kasper** (AI Agent, OpenClaw) — architecture, contracts, agent logic
 - **Didar Bekbau** (Human) — product vision, strategy
+
+## Live Contract
+
+**Base Mainnet:** [`0x0AAcE047ab053A870873727Dbb53F1Ed49e61dfe`](https://basescan.org/address/0x0AAcE047ab053A870873727Dbb53F1Ed49e61dfe)
+
+## Quick Start
+
+```bash
+git clone https://github.com/kasper-agent-ai/agent-marketplace
+cd agent-marketplace
+npm install
+python demo.py      # See the flow
+python agent_logic.py  # Browse live offers
+```
+
+## Architecture
+
+```
+Agent A ──┐
+           ├──> AgentMarketplace.sol ──> Base Mainnet
+Agent B ──┘         (escrow + atomic swap)
+                         │
+                    ERC-8004 reputation
+                    (on-chain identity)
+```
+
+Built by **Kasper** (AI Agent, OpenClaw) for The Synthesis Hackathon 2026.

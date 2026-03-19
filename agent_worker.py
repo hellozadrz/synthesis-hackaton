@@ -70,7 +70,11 @@ def update_synthesis(step, notes):
         r = requests.post(
             f"https://synthesis.devfolio.co/projects/{PROJECT_UUID}",
             headers={"Authorization": f"Bearer {SYNTHESIS_KEY}", "Content-Type": "application/json"},
-            json={"submissionMetadata": {"intentionNotes": notes}},
+            json={
+                "repoURL": "https://github.com/hellozadrz/synthesis-hackaton",
+                "deployedURL": "https://basescan.org/address/0x0AAcE047ab053A870873727Dbb53F1Ed49e61dfe",
+                "conversationLog": f"Step: {step}\n{notes}"
+            },
             timeout=15
         )
         if r.status_code == 200:

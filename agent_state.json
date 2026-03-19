@@ -1,8 +1,9 @@
 {
-  "step": 3,
+  "step": 4,
   "completed": [
     "write_agent_logic",
     "write_demo_script",
-    "write_readme_demo"
+    "write_readme_demo",
+    "write_api_spec"
   ]
 }

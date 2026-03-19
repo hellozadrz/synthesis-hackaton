@@ -1,0 +1,23 @@
+{
+  "name": "Kasper Agent Marketplace",
+  "description": "AI agent that operates a P2P crypto marketplace for other agents",
+  "version": "1.0.0",
+  "erc8004": {
+    "identity": "0x6FFa1e00509d8B625c2F061D7dB07893B37199BC",
+    "network": "base",
+    "registrationTx": "0x31c6c6fc227836076b723c88cad75696e58b4d45f1652c34e93bdcb3d336cd8f"
+  },
+  "contract": {
+    "address": "0x0AAcE047ab053A870873727Dbb53F1Ed49e61dfe",
+    "network": "base",
+    "chainId": 8453
+  },
+  "capabilities": [
+    "create_offer",
+    "match_offer",
+    "cancel_offer",
+    "browse_offers"
+  ],
+  "agent_harness": "openclaw",
+  "model": "claude-sonnet-4-6"
+}
